@@ -6,6 +6,25 @@
     <title>Payment Form Example</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilo personalizado para los radio buttons de tarjetas */
+        .credit-card-options {
+            display: flex;
+            background: #545454;
+            padding: 8px;
+            border-radius: 4px;
+            width: fit-content;
+        }
+        .credit-card-options .form-check {
+            margin: 0 10px;
+        }
+        .credit-card-options .form-check-input {
+            margin-right: 5px;
+        }
+        .credit-card-options i {
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <div class="container mt-5">
@@ -22,17 +41,17 @@
                     <div class="row mb-3">
                         <div class="col-md-4">
                             <label for="cardNumber" class="form-label">Card #</label>
-                            <input type="text" class="form-control" id="cardNumber" placeholder="XXXXXXXXXXXXXXXX">
+                            <input type="number" class="form-control" id="cardNumber" placeholder="XXXXXXXXXXXXXXXX">
                         </div>
                         <div class="col-md-4">
                             <label for="cvc" class="form-label">CVC #</label>
-                            <input type="text" class="form-control" id="cvc" placeholder="0000">
+                            <input type="number" class="form-control" id="cvc" placeholder="0000">
                         </div>
                         <div class="col-md-4">
                             <label for="amount" class="form-label">Amount</label>
                             <div class="input-group">
                                 <span class="input-group-text">$</span>
-                                <input type="text" class="form-control" id="amount" placeholder="Amount">
+                                <input type="number" class="form-control" id="amount" placeholder="Amount" step="0.01">
                             </div>
                         </div>
                     </div>
@@ -70,11 +89,23 @@
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <label class="form-label d-block">We accept:</label>
-                            <div class="bg-secondary p-2 rounded text-white d-inline-block mt-2">
-                                <i class="fa-brands fa-cc-visa fa-2x mx-1"></i>
-                                <i class="fa-brands fa-cc-mastercard fa-2x mx-1"></i>
-                                <i class="fa-brands fa-cc-amex fa-2x mx-1"></i>
-                                <i class="fa-brands fa-cc-discover fa-2x mx-1"></i>
+                            <div class="credit-card-options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="creditCard" id="visa">
+                                    <i class="fa-brands fa-cc-visa fa-2x"></i>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="creditCard" id="mastercard">
+                                    <i class="fa-brands fa-cc-mastercard fa-2x"></i>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="creditCard" id="amex">
+                                    <i class="fa-brands fa-cc-amex fa-2x"></i>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="creditCard" id="discover">
+                                    <i class="fa-brands fa-cc-discover fa-2x"></i>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
