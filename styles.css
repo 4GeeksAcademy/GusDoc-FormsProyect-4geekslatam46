@@ -1,0 +1,34 @@
+.credit-card-options {
+    display: flex;
+    background: #545454;
+    padding: 8px;
+    border-radius: 4px;
+    width: fit-content;
+}
+.credit-card-options .form-check {
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    /* flex-direction: column; */
+}
+.credit-card-options .form-check-input {
+   padding: 1px;
+    /* display: none; */
+}
+.credit-card-options label {
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+.credit-card-options i {
+    margin-left: 10px;
+    color: white;
+    font-size: 2rem;
+    transition: transform 0.2s;
+}
+.credit-card-options input:checked + label i {
+    transform: scale(1.2);
+    color: #FFD700;
+}
